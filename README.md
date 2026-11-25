@@ -1,3 +1,5 @@
+![FitTech — project overview](docs/images/project-cover.svg)
+
 # FitTech
 
 **실시간 요가 자세 인식·교정과 사용자 맞춤 운동 추천**
