@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, redirect, send_file, url_for, render_template, session, flash, Response
 import pandas as pd
 
@@ -31,7 +32,7 @@ else:
 
 app = Flask(__name__)
 socketio = SocketIO(app)
-app.secret_key = 'your_secret_key_here'
+app.secret_key = os.environ["FLASK_SECRET_KEY"]
 
 #app.register_blueprint(bp, url_prefix='/')
 app.register_blueprint(log,url_prefix='/')
