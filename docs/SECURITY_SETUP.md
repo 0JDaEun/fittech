@@ -13,6 +13,17 @@ Generate a new random FLASK_SECRET_KEY locally; replacing it invalidates existin
 1. Review the project's other credential references and rotate any exposed secret or privileged key through the provider. Do not assume every public Supabase publishable/anon key is secret; verify its role and policies.
 2. Configure the test environment and run the existing app; verify login, database reads/writes and relevant authorization rules.
 3. Review previous Git commits and external copies. Removing a literal from the current file does not revoke it or remove it from history.
-4. Existing tracked generated files are not removed solely by adding ignore patterns; review their contents and untrack them separately.
+4. Ignore patterns prevent new generated files from being added; the tracked paths removed in this branch are listed below.
 
 No credential values are included in this guide. No live keys were tested or revoked.
+
+## Tracked build artifacts
+
+The review branch also removes the following generated paths from the Git tree:
+
+- `flask/.vs`
+- `flask/__pycache__`
+- `flask/views/__pycache__`
+
+Python recreates bytecode caches when required.
+Historical Git objects remain unchanged. The application source, project data, and research artifacts are preserved.
