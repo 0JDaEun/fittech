@@ -75,6 +75,8 @@ flask/
 requirements.txt   초기 Python 의존성 목록
 ```
 
+> **유지보수 상태 (2026-11-26)**: 2024년 팀 프로젝트 원본을 보존하고 있다. 별도 보안 검토 브랜치에서 DB·Flask 설정 분리와 Python 캐시 정리를 진행했으며 [오프라인 CI 4개 테스트 및 문법 검사](https://github.com/0JDaEun/fittech/actions/runs/45730910777)가 통과했다. 모델 로딩, 실제 DB 및 카메라 연동은 미검증 상태다. [설정 가이드](https://github.com/0JDaEun/fittech/blob/security/config-hardening/docs/SECURITY_SETUP.md) · [검증 범위](https://github.com/0JDaEun/fittech/blob/security/config-hardening/docs/SECURITY_VALIDATION.md)
+
 ## 07. 실행 환경과 재현성
 
 카메라, Python 및 TensorFlow와 호환되는 환경, Supabase 설정이 필요하다. 모델 파일은 [flask/model](flask/model)에 있으며, 메인 코드의 상대 경로를 고려하면 실행 진입점은 다음과 같다.
